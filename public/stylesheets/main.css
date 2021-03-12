@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #3D9970;
+}
+
+button {
+    align-items: center;
+    background: white;
+    border: 2px solid transparent;
+    border-radius: 99em;
+    color: black;
+    font-weight: 500;
+    height: 2.5em;
+    min-width: 2.5em;
+    position: relative; /* WebKit Bug 173872 */
+    width: 100px;
+}
+
+.sort-buttons button {
+    font-size: 12px;
+    width: 130px;
+}
+
+.fa-star:before {
+    text-align: left;
+    align-self: flex-end;
+}
+
+.fa-star-o:before {
+    text-align: left;
+    align-self: flex-end;
+}
+
+.fa {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.label-header a {
+    color: black;
+}
+
+img {
+    height: 180px;
+    width: 180px;
+}
+
+.grid {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+.label {
+    background-color: white;
+    border-radius: 5px;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sort-buttons {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.user {
+    width: 340px;
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 120px;
+}
+
+.user .user-details {
+    margin-left: 10px;
+}
+
+.user-details h4 {
+    margin-bottom: 0px;
+    font-size: 0.8rem;
+    font-weight: 200;
+}
+
+.user-details h1 {
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+
+.user img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.label-header {
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    background-color: white;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    display: flex;
+}
+
+.label-header h1 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    display: inline-block;
+    text-align: left;
+    align-self: flex-end;
+}
+
+.label-header p {
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 25px;
+    font-weight: 200;
+    display: inline-block;
+    text-align: left;
+    align-self: flex-end;
+}
+
+.label-header .header-info {
+    font-size: 17px;
+}
+
+.main-nav {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.label p {
+    margin-top: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+form {
+    display: inline-block;
+}
+
+.label .p-artist {
+    margin-bottom: 2px;
+    font-weight: 600;
+    font-size: 0.8vw;
+}
+
+.label .p-album {
+    margin-bottom: 10px;
+    font-size: 0.6vw;
+    font-weight: 100;
+    color: slategray;
+}
+
+.label-name {
+    font-weight: 100;
+}
+
+.watchlist {
+    justify-self: center;
+    align-self: center;
+    margin-left: 400px;
+}
+
+#watchlist-info {
+    font-weight: 300;
+    font-size: 15px;
+    color: slategray;
+}
+
+.spotify-logo {
+    height: 75px;
+    width: 250px;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.login-box {
+    width: 800px;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.login-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #191414;
+}
+
+.welcome {
+    font-size: 20px;
+    font-weight: 200;
+    margin-top: 35px;
+    margin-bottom: 0px;
+    color: #191414;
+}
+
+.login-text button a {
+    color: #191414;
+    text-decoration: none;
+}

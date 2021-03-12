@@ -1,0 +1,15 @@
+<header class="label-header">
+    <h1>Label discovery</h1>
+    <p class="header-info">Select a label to view their back catalogue</p>
+</header>
+
+<div class="grid">
+    <% labels.each do |label| %>
+        <div class="label">
+            <p class="label-name"><%= label["label_name"] %></p>
+            <a href="/label/<%= label["id"] %>">
+                <img src="<%= label["label_img_url"] %>" alt="">
+            </a>
+        </div>
+    <% end %>
+</div>

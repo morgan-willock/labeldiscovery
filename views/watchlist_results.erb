@@ -1,0 +1,60 @@
+<div class="sort-buttons">
+    <form action="/user/watchlist/<%= session["user_id"] %>/sort/" method="get">
+        <input type="hidden" name= "year" value="asc">
+        <button>SORT YEAR ASC</button>
+    </form>
+    <form action="/user/watchlist/<%= session["user_id"] %>/sort/" method="get">
+        <input type="hidden" name= "year" value="desc">
+        <button>SORT YEAR DESC</button>
+    </form>
+    <form action="/user/watchlist/<%= session["user_id"] %>/sort/" method="get">
+        <input type="hidden" name= "album" value="a-z">
+        <button>SORT ALBUM A-Z</button>
+    </form>
+    <form action="/user/watchlist/<%= session["user_id"] %>/sort/" method="get">
+        <input type="hidden" name= "album" value="z-a">
+        <button>SORT ALBUM Z-A</button>
+    </form>
+    <form action="/user/watchlist/<%= session["user_id"] %>/sort/" method="get">
+        <input type="hidden" name= "artist" value="a-z">
+        <button>SORT ARTIST A-Z</button>
+    </form>
+    <form action="/user/watchlist/<%= session["user_id"] %>/sort/" method="get">
+        <input type="hidden" name= "artist" value="z-a">
+        <button>SORT ARTIST Z-A</button>
+    </form>
+</div>
+<div class="sort-buttons">
+    <form action="/user/watchlist/<%= session["user_id"] %>/sort/" method="get">
+        <input type="hidden" name= "latest_releases" value="1-month">
+        <button>LATEST MONTH</button>
+    </form>
+    <form action="/user/watchlist/<%= session["user_id"] %>/sort/" method="get">
+        <input type="hidden" name= "latest_releases" value="3-month">
+        <button>PAST 3 MONTHS</button>
+    </form>
+    <form action="/user/watchlist/<%= session["user_id"] %>/sort/" method="get">
+        <input type="hidden" name= "latest_releases" value="6-month">
+        <button>PAST 6 MONTHS</button>
+    </form>
+    <form action="/user/watchlist/<%= session["user_id"] %>/sort/" method="get">
+        <input type="hidden" name= "latest_releases" value="all">
+        <button>ALL RELEASES</button>
+    </form>
+</div>
+
+<div class="label-header">
+    <h1>Watchlist</h1><p class="header-info">Here are all the labels releases your watching currently.</p>
+</div>
+
+<div class="grid">
+    <% albums.each do |album| %>
+        <div class="label">
+            <p class="p-artist"><%= album["artist"] %></p>
+            <p class="p-album"><%= album["album_name"] %></p>
+            <a href="<%= album["external_link"] %>">
+                <img src="<%= album["image_med"] %>" alt="">
+            </a>
+        </div>
+    <% end %>
+</div>

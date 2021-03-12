@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+  <link rel="stylesheet" href="/fontawesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/fontawesome/css/font-awesome.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Label discovery</title>
+</head>
+<body>
+
+  <% if logged_in? %>
+    <div class="user">
+      <img src="<%= user["images"][0]["url"] %>" alt="">
+      <div class="user-details">
+        <h4>Logged in as:</h4>
+        <h1> <%= user["display_name"] %> </h1>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="/labels">
+        <button>HOME</button>
+      </a>
+      <form action="/user/watchlist/<%= session["user_id"] %>" method="get">
+        <button>WATCHLIST</button>
+      </form>
+      <form action="/sessions" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <label for=""></label>
+        <button>LOGOUT</button>
+      </form>
+    </nav>
+  <% end %>
+
+  <%= yield %>
+
+</body>
+</html>

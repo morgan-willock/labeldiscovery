@@ -1,0 +1,72 @@
+<div class="sort-buttons">
+    <form action="/label/<%= id %>/sort/" method="get">
+        <input type="hidden" name= "year" value="asc">
+        <button>SORT YEAR ASC</button>
+    </form>
+    <form action="/label/<%= id %>/sort/" method="get">
+        <input type="hidden" name= "year" value="desc">
+        <button>SORT YEAR DESC</button>
+    </form>
+    <form action="/label/<%= id %>/sort/" method="get">
+        <input type="hidden" name= "album" value="a-z">
+        <button>SORT ALBUM A-Z</button>
+    </form>
+    <form action="/label/<%= id %>/sort/" method="get">
+        <input type="hidden" name= "album" value="z-a">
+        <button>SORT ALBUM Z-A</button>
+    </form>
+    <form action="/label/<%= id %>/sort/" method="get">
+        <input type="hidden" name= "artist" value="a-z">
+        <button>SORT ARTIST A-Z</button>
+    </form>
+    <form action="/label/<%= id %>/sort/" method="get">
+        <input type="hidden" name= "artist" value="z-a">
+        <button>SORT ARTIST Z-A</button>
+    </form>
+</div>
+<div class="sort-buttons">
+    <form action="/label/<%= id %>/sort/" method="get">
+        <input type="hidden" name= "latest_releases" value="1-month">
+        <button>LATEST MONTH</button>
+    </form>
+    <form action="/label/<%= id %>/sort/" method="get">
+        <input type="hidden" name= "latest_releases" value="3-month">
+        <button>PAST 3 MONTHS</button>
+    </form>
+    <form action="/label/<%= id %>/sort/" method="get">
+        <input type="hidden" name= "latest_releases" value="6-month">
+        <button>PAST 6 MONTHS</button>
+    </form>
+    <form action="/label/<%= id %>/sort/" method="get">
+        <input type="hidden" name= "latest_releases" value="all">
+        <button>ALL RELEASES</button>
+    </form>
+</div>
+
+<div class="label-header">
+    <h1>Label:</h1><p><%= albums[0]["label_name"] %></p>
+        <% if watchlist == false %>
+            <a href="/user/watchlist/edit/<%= id %>">
+                <input type="hidden" name="id" value="<%= id %>">
+                <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+            </a>
+        <% elsif watchlist == true %>
+            <a href="/user/watchlist/delete/<%= id %>">
+                <input type="hidden" name="id" value="<%= id %>">
+                <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+            </a>
+        <% end %>
+        <p id="watchlist-info">Click star to add / remove label from watchlist</p>
+</div>
+
+<div class="grid">
+    <% albums.each do |album| %>
+        <div class="label">
+            <p class="p-artist"><%= album["artist"] %></p>
+            <p class="p-album"><%= album["album_name"] %></p>
+            <a href="<%= album["external_link"] %>">
+                <img src="<%= album["image_med"] %>" alt="">
+            </a>
+        </div>
+    <% end %>
+</div>
